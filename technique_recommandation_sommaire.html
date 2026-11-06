@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Ressources · TMK Performances</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CHARTE TMK PERFORMANCES - Cas HTML formation Recommandation
+   Couleurs : violet/prune principal + or accent + vert charbon
+   Polices  : Manrope (web)
+   ============================================================ */
+:root {
+  --tmk-prune:        #8C1E70;
+  --tmk-prune-dark:   #5E1349;
+  --tmk-prune-light:  #F4E6EE;
+  --tmk-charbon:      #283C28;
+  --tmk-grey:         #3C3C3C;
+  --tmk-grey-light:   #8A8A8A;
+  --tmk-or:           #C9A961;
+  --tmk-accent:       #C77BAA;
+  --tmk-white:        #FFFFFF;
+  --tmk-bg:           #FAFAFA;
+  --tmk-bg-card:      #FFFFFF;
+  --tmk-success:      #548235;
+  --tmk-danger:       #C00000;
+  --tmk-warning-bg:   #FFF2CC;
+  --tmk-warning-text: #7F6000;
+  --tmk-border:       #E5E7EB;
+
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 16px;
+  --shadow:    0 4px 12px rgba(94,19,73,.08), 0 1px 3px rgba(94,19,73,.06);
+  --shadow-lg: 0 12px 32px rgba(94,19,73,.12), 0 4px 12px rgba(94,19,73,.08);
+
+  --font:      'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--tmk-charbon);
+  background: var(--tmk-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* HEADER */
+.tmk-header {
+  background: linear-gradient(135deg, var(--tmk-prune) 0%, var(--tmk-prune-dark) 100%);
+  color: white;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.tmk-header::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--tmk-or);
+}
+.tmk-header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.tmk-header .tmk-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+.tmk-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.tmk-brand .tmk-logo-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--tmk-or);
+}
+.tmk-brand .tmk-logo-sub {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+
+/* CONTAINER */
+.tmk-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* CARTES */
+.tmk-card {
+  background: var(--tmk-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--tmk-border);
+}
+.tmk-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--tmk-prune-dark);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--tmk-prune-light);
+}
+
+/* TITRES */
+h2 {
+  font-size: 1.4rem;
+  color: var(--tmk-prune-dark);
+  font-weight: 700;
+  margin: 24px 0 12px;
+}
+h3 {
+  font-size: 1.1rem;
+  color: var(--tmk-prune);
+  font-weight: 700;
+  margin: 20px 0 10px;
+}
+p { margin-bottom: 12px; }
+
+/* BADGES */
+.tmk-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.tmk-badge-or { background: var(--tmk-or); color: white; }
+.tmk-badge-prune { background: var(--tmk-prune); color: white; }
+.tmk-badge-prune-light { background: var(--tmk-prune-light); color: var(--tmk-prune-dark); }
+.tmk-badge-success { background: var(--tmk-success); color: white; }
+.tmk-badge-danger { background: var(--tmk-danger); color: white; }
+
+/* CITATIONS */
+.tmk-quote {
+  background: var(--tmk-prune-light);
+  border-left: 4px solid var(--tmk-prune);
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  margin: 16px 0;
+  font-style: italic;
+  color: var(--tmk-prune-dark);
+}
+
+/* TIMELINE */
+.tmk-timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 16px 0;
+}
+.tmk-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--tmk-prune), var(--tmk-accent));
+}
+.tmk-tl-item {
+  position: relative;
+  padding-bottom: 18px;
+}
+.tmk-tl-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tmk-prune);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--tmk-prune-light);
+}
+.tmk-tl-item.success::before { background: var(--tmk-success); box-shadow: 0 0 0 2px #d4edda; }
+.tmk-tl-item.danger::before { background: var(--tmk-danger); box-shadow: 0 0 0 2px #f8d7da; }
+.tmk-tl-step {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--tmk-or);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+.tmk-tl-title {
+  font-weight: 700;
+  color: var(--tmk-charbon);
+  margin-bottom: 4px;
+}
+
+/* PROFILS / FICHES */
+.tmk-profile {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 2px solid var(--tmk-prune-light);
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+.tmk-profile:hover {
+  border-color: var(--tmk-prune);
+  box-shadow: var(--shadow-lg);
+}
+.tmk-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.tmk-profile-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--tmk-prune), var(--tmk-prune-dark));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.tmk-profile-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--tmk-prune-dark);
+}
+.tmk-profile-tag {
+  font-size: 0.85rem;
+  color: var(--tmk-grey-light);
+}
+
+/* LISTES */
+.tmk-list { list-style: none; padding: 0; }
+.tmk-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+}
+.tmk-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--tmk-or);
+  font-weight: 700;
+}
+.tmk-list-check li::before { content: '✓'; color: var(--tmk-success); }
+.tmk-list-cross li::before { content: '✗'; color: var(--tmk-danger); }
+
+/* CALLOUTS */
+.tmk-callout {
+  display: flex;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  margin: 16px 0;
+}
+.tmk-callout-key {
+  background: var(--tmk-prune-light);
+  border-left: 4px solid var(--tmk-prune);
+}
+.tmk-callout-key strong { color: var(--tmk-prune-dark); }
+.tmk-callout-warn {
+  background: var(--tmk-warning-bg);
+  border-left: 4px solid var(--tmk-or);
+}
+.tmk-callout-warn strong { color: var(--tmk-warning-text); }
+
+/* TABLEAU */
+table.tmk-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+table.tmk-table thead {
+  background: linear-gradient(135deg, var(--tmk-prune) 0%, var(--tmk-prune-dark) 100%);
+  color: white;
+}
+table.tmk-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+table.tmk-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--tmk-border);
+}
+table.tmk-table tbody tr:hover { background: var(--tmk-prune-light); }
+table.tmk-table tbody tr:last-child td { border-bottom: none; }
+
+/* SCRIPT DIALOGUE */
+.tmk-dialog { margin: 16px 0; }
+.tmk-dialog-line {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+.tmk-dialog-line.conseiller {
+  background: var(--tmk-prune-light);
+  border-left: 3px solid var(--tmk-prune);
+}
+.tmk-dialog-line.client {
+  background: #f1f3f5;
+  border-left: 3px solid var(--tmk-grey-light);
+}
+.tmk-dialog-role {
+  font-weight: 700;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+.tmk-dialog-line.conseiller .tmk-dialog-role { color: var(--tmk-prune-dark); }
+.tmk-dialog-line.client .tmk-dialog-role { color: var(--tmk-grey); }
+
+/* FOOTER */
+.tmk-footer {
+  background: var(--tmk-charbon);
+  color: rgba(255,255,255,0.85);
+  padding: 18px 24px;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 32px;
+  line-height: 1.5;
+}
+.tmk-footer .tmk-footer-brand {
+  color: var(--tmk-or);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .tmk-container { padding: 20px 14px; }
+  .tmk-card { padding: 20px 16px; }
+  .tmk-header { padding: 22px 18px; }
+  .tmk-header h1 { font-size: 1.3rem; }
+  .tmk-dialog-line { flex-direction: column; gap: 4px; }
+  .tmk-dialog-role { min-width: 0; }
+}
+
+
+.tmk-tl-item.nuance::before { background: var(--tmk-or); box-shadow: 0 0 0 2px #f3e8cc; }
+.tmk-badge-nuance { background: var(--tmk-or); color: white; }
+.tmk-fiche { background:#fff; border:2px dashed var(--tmk-prune-light); border-radius:var(--radius-lg); padding:22px; margin-bottom:20px; }
+.tmk-fiche h3 { margin-top:0; }
+@media print { .tmk-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<header class="tmk-header">
+  <div class="tmk-brand"><span class="tmk-logo-text">TMK</span><span class="tmk-logo-sub">Performances</span></div>
+  <h1>Technique de la recommandation — les ressources</h1>
+  <div class="tmk-subtitle"><span class="tmk-badge tmk-badge-or">SOMMAIRE</span> &nbsp;Formation · La technique de la recommandation client</div>
+</header>
+<main class="tmk-container">
+<section class="tmk-card"><div class="tmk-card-title">Cas 1 · L'effet cascade</div><p>Une demande osée au bon moment, et l'effet boule de neige qui suit.</p><p><a href="https://thle2.github.io/technique_recommandation_cas_01_effet_cascade/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Cas 2 · Le client qui a dit non</div><p>Un refus mal amené, puis bien encaissé, qui revient en recommandation spontanée.</p><p><a href="https://thle2.github.io/technique_recommandation_cas_02_refus_bien_encaisse/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Cas 3 · Le parcours client</div><p>Le fil rouge : une relation client sur plusieurs années, étape par étape.</p><p><a href="https://thle2.github.io/technique_recommandation_cas_03_parcours_client/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Cas 4 · La méthode VPO</div><p>Trois façons de demander : la maladroite, la commerciale et la méthode VPO.</p><p><a href="https://thle2.github.io/technique_recommandation_cas_04_methode_vpo/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Cas 5 · Trois profils réticents</div><p>Méfiant, pressé, bloqué : comprendre chaque refus et trouver le bon rebond.</p><p><a href="https://thle2.github.io/technique_recommandation_cas_05_profils_reticents/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Cas 6 · Les clients ambassadeurs</div><p>Les cinq rituels qui transforment un client satisfait en ambassadeur durable.</p><p><a href="https://thle2.github.io/technique_recommandation_cas_06_ambassadeurs/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Simulation 2 · Repérer le bon moment</div><p>Trois fiches client pour s'entraîner à repérer le signal et saisir le moment.</p><p><a href="https://thle2.github.io/technique_recommandation_sim_02_reperer_le_bon_moment/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Simulation 3 · Pitch VPO</div><p>Tester et affiner sa propre demande VPO sur plusieurs partenaires.</p><p><a href="https://thle2.github.io/technique_recommandation_sim_03_pitch_vpo/">Ouvrir la page</a></p></section><section class="tmk-card"><div class="tmk-card-title">Simulation 4 · Enchaînement complet</div><p>La simulation finale : moment, méthode VPO, objection et rebond.</p><p><a href="https://thle2.github.io/technique_recommandation_sim_04_enchainement_complet/">Ouvrir la page</a></p></section>
+</main>
+<footer class="tmk-footer"><span class="tmk-footer-brand">TMK PERFORMANCES</span><br>TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</footer>
+</body>
+</html>
